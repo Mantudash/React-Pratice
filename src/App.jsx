@@ -3,7 +3,6 @@ import CssInJs from './01.addingCss/1.1.cssInJs'
 import InlineCss from './01.addingCss/1.2.inline'
 import ModularCss from './01.addingCss/1.3.modular'
 import ExtranalCss from './01.addingCss/1.4.extranal'
-import Cards from './cards'
 import ClassComponents from './03.creatingComponents/3.1.Classcomopnent'
 import Functional from './03.creatingComponents/3.2.functionalcoponent'
 import { StateClass } from './04.state/4.1.stateIncc'
@@ -12,10 +11,14 @@ import propsComponent from './05.props/introtoprops'
 import PropComp from './05.props/introtoprops'
 import Usingxhr from './16.dataFetching/16.1.usingxhr'
 import {Mounting} from './11.lifeCyclemethod'
+import Updating from './11.lifeCyclemethod/11.2.updating'
+import Usestate from './14.hooks/14.1.useState'
+import UseEffect from './14.hooks/14.2.useEffect'
+const Lazyloading= React.lazy(()=>import("./28.lazyLoading"))
 
 function App() {
   return (
-    <div>
+    <React.Suspense fallback={<div>loading...</div>}>
       {/* <CssInJs /> */}
       {/* <InlineCss /> */}
       {/* {/* <ModularCss /> */}
@@ -27,9 +30,13 @@ function App() {
       {/* <StateInfc/> */}
       {/* <PropComp/> */}
       {/* <Usingxhr/> */}
-      <Mounting/>
+      {/* <Mounting/> */}
+      {/* <Lazyloading/> */}
+      {/* <Updating/> */}
+      {/* <Usestate/> */}
+      <UseEffect/>
       
-    </div>
+    </React.Suspense>
   )
 }
 
